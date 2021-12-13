@@ -1,49 +1,75 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ECCustomTools : MonoBehaviour
 {
-    [MenuItem("GameObject/IsolateActiveFalse %#q")]
-    public static void IsolateActiveFalse()
+    public static bool _bActive = true;
+    public static List<GameObject> _undolist = new List<GameObject>();
+    private void Awake()
     {
+        _bActive = true;
+        _undolist.Clear();
+    }
+
+    [MenuItem("GameObject/IsolateActive %#q")]
+    public static void IsolateActive()
+    {
+        _bActive = !_bActive;
         var list = Selection.GetTransforms(SelectionMode.TopLevel);
-
-        foreach (var item in list)
+        if (!_bActive)
         {
-            Transform traParent = item.parent;
-            if (traParent != null)
+            foreach (var item in list)
             {
-                for (int i = 0; i < traParent.childCount; i++)
+                Transform traParent = item.parent;
+                if (traParent != null)
                 {
-                    if (item == traParent.GetChild(i))
-                        continue;
+                    for (int i = 0; i < traParent.childCount; i++)
+                    {
+                        SetActive(traParent.GetChild(i).gameObject, list);
+                    }
+                }
+                else
+                {
+                    GameObject[] all_Objs = SceneManager.GetActiveScene().GetRootGameObjects();
+                    foreach (GameObject g in all_Objs)
+                    {
+                        SetActive(g, list);
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (var item in _undolist)
+            {
+                item.SetActive(true);
+            }
+            _undolist.Clear();
+        }
+    }
 
-                    Undo.RegisterCompleteObjectUndo(traParent.GetChild(i).gameObject, "GameObject/IsolateActiveFalse");
-                    traParent.GetChild(i).gameObject.SetActive(false);
-                }
-            }
-            else
+    private static void SetUndo(GameObject obj)
+    {
+        Undo.RegisterCompleteObjectUndo(obj, "GameObject/IsolateActive");
+        _undolist.Add(obj);
+        obj.SetActive(false);
+    }
+    private static void SetActive(GameObject obj, Transform[] list)
+    {
+        bool bSame = false;
+        foreach (var cur in list)
+        {
+            if (cur == obj.transform)
             {
-                GameObject[] all_Objs = SceneManager.GetActiveScene().GetRootGameObjects();
-                foreach (GameObject g in all_Objs)
-                {
-                    bool bSame = false;
-                    foreach (var cur in list)
-                    {
-                        if (cur == g.transform)
-                        {
-                            bSame = true;
-                            break;
-                        }
-                    }
-                    if (!bSame)
-                    {
-                        Undo.RegisterCompleteObjectUndo(g, "GameObject/IsolateActiveFalse");
-                        g.SetActive(false);
-                    }
-                }
+                bSame = true;
+                break;
             }
+        }
+        if (!bSame && obj.activeSelf)
+        {
+            SetUndo(obj);
         }
     }
 }
