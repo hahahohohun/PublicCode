@@ -5,6 +5,9 @@
 ### 하이어라키상(hierarchy)의 오브젝트들의 이름을 한번에 변경하기
 ![Honeycam 2021-12-09 18-30-31](https://user-images.githubusercontent.com/49916333/146865108-92d4eaae-6c7c-4844-bef4-2652fbdf2057.gif)
 
+<img width="80%" src="https://user-images.githubusercontent.com/49916333/146865108-92d4eaae-6c7c-4844-bef4-2652fbdf2057.gif"/>
+
+출처: https://ndb796.tistory.com/557 [안경잡이개발자]
 * 블로그 <https://funfunhanblog.tistory.com/402>
 ***
 # ECCustomTools.cs
