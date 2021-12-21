@@ -2,7 +2,7 @@
 
 # ECNaming.cs
 ## 하이어라키상(hierarchy)의 오브젝트들의 이름을 한번에 변경하기
-![Honeycam 2021-12-09 18-30-31](https://user-images.githubusercontent.com/49916333/146864849-d717d3ae-2a3e-4bc6-b165-c338aa3fc35d.gif)
+(https://user-images.githubusercontent.com/49916333/146864849-d717d3ae-2a3e-4bc6-b165-c338aa3fc35d.gif)
 
 
 # ECCustomTools.cs
