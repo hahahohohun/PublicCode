@@ -1,7 +1,7 @@
 # PublicCode
 # Tools
 ## ECNaming.cs
-[code] [code] <https://github.com/hahahohohun/PublicCode/blob/main/Tools/Tools/ECNaming.cs>
+[code] <https://github.com/hahahohohun/PublicCode/blob/main/Tools/Tools/ECNaming.cs>
 ### 하이어라키상(hierarchy)의 오브젝트들의 이름을 한번에 변경하기
 <img width="50%" src="https://user-images.githubusercontent.com/49916333/146865108-92d4eaae-6c7c-4844-bef4-2652fbdf2057.gif"/>
 
