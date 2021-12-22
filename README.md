@@ -1,5 +1,5 @@
 # PublicCode
-#Tools
+# Tools
 ## ECNaming.cs
 ### 하이어라키상(hierarchy)의 오브젝트들의 이름을 한번에 변경하기
 <img width="50%" src="https://user-images.githubusercontent.com/49916333/146865108-92d4eaae-6c7c-4844-bef4-2652fbdf2057.gif"/>
@@ -7,7 +7,7 @@
 * 블로그 <https://funfunhanblog.tistory.com/402>
 
 ***
-# ECCustomTools.cs
+## ECCustomTools.cs
 ### 하이어라키상(hierarchy)의 선택한 오브젝트를 제외한 오브젝트 모두 끄기
 선택한 오브젝트를 제외한 오브젝트의 SetActive를 false처리한다. 
 단축키 : Ctrl + Shift + Q
@@ -19,8 +19,8 @@
 
 * 블로그 <https://funfunhanblog.tistory.com/403>
 
-***
-#Ref
+****
+# Ref
 ## CMoveText.cs
 ### 좌우로 흐르는 텍스트
 <img width="60%" src="https://user-images.githubusercontent.com/49916333/147054214-4a58dbe1-235e-4e75-9668-3f37e6508047.gif"/>
