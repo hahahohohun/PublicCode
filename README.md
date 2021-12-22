@@ -27,3 +27,6 @@
 [code] <https://github.com/hahahohohun/PublicCode/tree/main/Tools/Ref>
 ### 좌우로 흐르는 텍스트
 <img width="60%" src="https://user-images.githubusercontent.com/49916333/147054214-4a58dbe1-235e-4e75-9668-3f37e6508047.gif"/>
+배경이되는 이미지에 스크립트를 붙여주고 ins_traTitle에 흐르는 텍스트UI를 넣어준다.
+
+****
